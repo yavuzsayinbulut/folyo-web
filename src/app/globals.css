@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --surface-2: #f1efe8;
+  --line: rgba(31, 30, 28, 0.09);
+  --line-strong: rgba(31, 30, 28, 0.18);
+  --ink: #1f1e1c;
+  --ink-2: #5f5e5a;
+  --ink-3: #888780;
+  --accent: #534ab7;
+  --accent-soft: #eeedfe;
+  --accent-ink: #3c3489;
+  --on-accent: #ffffff;
+  --ok-soft: #eaf3de;
+  --ok-ink: #27500a;
+  --danger: #a32d2d;
+  /* Grafik isareti: dataviz dogrulayicisindan gecti (acik: #534ab7, koyu: #8b84e6). */
+  --chart: #534ab7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --surface: #1f1f1d;
+    --surface-2: #2a2a27;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.18);
+    --ink: #f1efe8;
+    --ink-2: #b4b2a9;
+    --ink-3: #888780;
+    --accent: #afa9ec;
+    --accent-soft: #26215c;
+    --accent-ink: #cecbf6;
+    --on-accent: #26215c;
+    --ok-soft: #173404;
+    --ok-ink: #c0dd97;
+    --danger: #f09595;
+    --chart: #8b84e6;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-on-accent: var(--on-accent);
+  --color-ok-soft: var(--ok-soft);
+  --color-ok-ink: var(--ok-ink);
+  --color-danger: var(--danger);
+  --color-chart: var(--chart);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Platform tonlari: acik temada acik zemin + koyu yazi, koyu temada tersi. */
+.tone-gray { --tone-bg: #f1efe8; --tone-ink: #2c2c2a; }
+.tone-green { --tone-bg: #eaf3de; --tone-ink: #27500a; }
+.tone-pink { --tone-bg: #fbeaf0; --tone-ink: #72243e; }
+.tone-blue { --tone-bg: #e6f1fb; --tone-ink: #0c447c; }
+.tone-coral { --tone-bg: #faece7; --tone-ink: #712b13; }
+.tone-amber { --tone-bg: #faeeda; --tone-ink: #633806; }
+.tone-purple { --tone-bg: #eeedfe; --tone-ink: #3c3489; }
+.tone-teal { --tone-bg: #e1f5ee; --tone-ink: #085041; }
+.tone-red { --tone-bg: #fcebeb; --tone-ink: #791f1f; }
+
+@media (prefers-color-scheme: dark) {
+  .tone-gray { --tone-bg: #2c2c2a; --tone-ink: #d3d1c7; }
+  .tone-green { --tone-bg: #173404; --tone-ink: #c0dd97; }
+  .tone-pink { --tone-bg: #4b1528; --tone-ink: #f4c0d1; }
+  .tone-blue { --tone-bg: #042c53; --tone-ink: #b5d4f4; }
+  .tone-coral { --tone-bg: #4a1b0c; --tone-ink: #f5c4b3; }
+  .tone-amber { --tone-bg: #412402; --tone-ink: #fac775; }
+  .tone-purple { --tone-bg: #26215c; --tone-ink: #cecbf6; }
+  .tone-teal { --tone-bg: #04342c; --tone-ink: #9fe1cb; }
+  .tone-red { --tone-bg: #501313; --tone-ink: #f7c1c1; }
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+@keyframes eq {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
